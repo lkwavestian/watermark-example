@@ -1,0 +1,15 @@
+{
+  "hash": "bbf29e17",
+  "configHash": "4a98111c",
+  "lockfileHash": "a73bfeb5",
+  "browserHash": "3bc6ad18",
+  "optimized": {
+    "image-tools": {
+      "src": "../../../../../node_modules/image-tools/index.js",
+      "file": "image-tools.js",
+      "fileHash": "df8b5df6",
+      "needsInterop": false
+    }
+  },
+  "chunks": {}
+}

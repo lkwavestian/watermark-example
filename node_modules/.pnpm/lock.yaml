@@ -1,0 +1,12 @@
+lockfileVersion: '6.0'
+
+dependencies:
+  image-tools:
+    specifier: ^1.4.0
+    version: 1.4.0
+
+packages:
+
+  /image-tools@1.4.0:
+    resolution: {integrity: sha512-TKtvJ6iUwM0mfaD4keMnk1ENHFC470QEjBfA3IlvKdEOufzvWbjbaoNcoyYq6HlViF8+d5tOS1ooE6j7CHf1lQ==}
+    dev: false

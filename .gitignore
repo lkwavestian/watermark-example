@@ -1,0 +1,6 @@
+.vscode/*
+node_modules/
+uni_modules/
+unpackage/
+.hbuilderx/launch.json
+pnpm-lock.yaml

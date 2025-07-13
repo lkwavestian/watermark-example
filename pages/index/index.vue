@@ -64,18 +64,17 @@ const addClick = () => {
       // 选择图片时有可能多选，所以需要添加遍历去一个个添加水印
       for (let i = 0; i < imgPath.length; i++) {
         //循环添加水印
-        let drawPath = await drawStart(imgPath[i]);
-        console.log("drawPath", drawPath);
+        let drawImageFile = await drawStart(imgPath[i]);
+        console.log("drawImageFile", drawImageFile);
 
-        imgFilePathList.value.push(drawPath.path);
+        imgFilePathList.value.push(drawImageFile.path);
       }
+      uni.hideLoading();
 
       toast.value.show({
         type: "success",
         message: "上传成功",
-        complete: () => {
-          uni.hideLoading();
-        },
+        complete: () => {},
       });
     },
   });
@@ -117,6 +116,8 @@ const drawStart = (imgSrc) => {
       let time = getTimeStr(); //拿到时间
       let lineHeight = 22;
       let y = 40;
+
+      // 绘制文本 参数分别是：文本、x坐标、y坐标
       ctx.fillText(time, 10, y);
       ctx.draw();
 
@@ -152,9 +153,7 @@ const getAfterImg = (instance) => {
     uni.canvasToTempFilePath(
       {
         canvasId: "myCanvas",
-        // width: canvasW.value,
-        // height: canvasH.value,
-        // quality: 0.5,
+
         success: (res) => {
           console.log("getAfterImg res", res);
           resolve(res.tempFilePath);
@@ -249,6 +248,7 @@ const getTimeStr = () => {
   padding-right: 20px;
   gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
 }
 .imgItem {
   position: relative;

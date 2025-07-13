@@ -71,6 +71,23 @@ const addClick = () => {
       }
       uni.hideLoading();
 
+      // 使用 uni.uploadFile上传图片
+      /* await Promise.all(
+        imgFilePathList.value.map((filePath) => {
+          console.log("filePath", filePath);
+          return uni.uploadFile({
+            url: `https://example.com/upload`, // 替换为你的上传接口地址
+            header: {
+              token: accessToken,
+              Authorization: `Bearer ${accessToken}`,
+            },
+            name: "multFiles",
+            file: filePath,
+            formData: {},
+          });
+        }),
+      ); */
+
       toast.value.show({
         type: "success",
         message: "上传成功",
